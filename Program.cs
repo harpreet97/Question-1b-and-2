@@ -4,19 +4,19 @@ namespace Question_2
 {
     class Car
     {
-        private string Colour { get; set; }
-        private string Make { get; set; }
-        private string Gearbox { get; set; }
+        private string colour { get; set; }
+        private string make { get; set; }
+        private string gearbox { get; set; }
 
-        public Car(string colour, string make, string gearbox)
+        public Car(string col, string mk, string gbox)
         {
-            Colour = colour;
-            Make = make;
-            Gearbox = gearbox;
+            colour = col;
+            make = mk;
+            gearbox = gbox;
         }
         public string DescribeCar()
         {
-            return string.Format("This car is a {0} {1} with a {2} transmission.", Colour, Make, Gearbox);
+            return string.Format("This car is a {0} {1} with a {2} transmission.", colour, make, gearbox);
         }
     }
     class Program
@@ -26,19 +26,18 @@ namespace Question_2
 
             Console.WriteLine("Enter new car details below");
             Console.WriteLine("***************************************");
-            Console.WriteLine("Please enter the colour of the your car?");
-            string colour = Console.ReadLine();
-            Console.WriteLine("Colour:" + colour);
+            Console.Write("Colour: ");
+            string col = Console.ReadLine();
             Console.WriteLine("");
-            Console.WriteLine("Please enter the make of the your car?");
-            string make = Console.ReadLine();
-            Console.WriteLine("Make:" + make);
+
+            Console.Write("Make: ");
+            string mk = Console.ReadLine();;
             Console.WriteLine("");
-            Console.WriteLine("Please enter the gearbox type of the your car?");
-            string gearbox = Console.ReadLine();
-            Console.WriteLine("Gearbox type:" +gearbox);
+
+            Console.Write("Gearbox type: ");
+            string gbox = Console.ReadLine();
             Console.WriteLine("");
-            Car obj = new Car(colour, make, gearbox);
+            Car obj = new Car(col, mk, gbox);
             Console.WriteLine(obj.DescribeCar());
         }
     }
